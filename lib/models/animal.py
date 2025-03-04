@@ -3,8 +3,6 @@ from models.habitat import Habitat
 
 class Animal:
 
-    all = {}
-
     def __init__(self, name, color, predator, habitat_id, id=None):
         self.name = name
         self.color = color
@@ -107,8 +105,6 @@ class Animal:
 
         CURSOR.execute(sql, (self.id,))
         CONN.commit()
-
-        del type(self).all[self.id]
         self.id = None
 
     @classmethod
@@ -119,17 +115,7 @@ class Animal:
     
     @classmethod
     def instance_from_db(cls, row):
-        animal = cls.all.get(row[0])
-        if animal:
-            animal.name = row[1]
-            animal.color = row[2]
-            animal.predator = bool(row[3])
-            animal.habitat_id = row[4]
-        else:
-            animal = cls(row[1], row[2], bool(row[3]), row[4])
-            animal.id = row[0]
-            cls.all[animal.id] = animal
-        return animal
+        return cls(row[1], row[2], bool(row[3]), row[4], id=row[0])
     
     @classmethod
     def get_all(cls):
