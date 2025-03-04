@@ -19,7 +19,8 @@ def habitat_sub_menu():
     view_animals_by_habitat,
     add_habitat,
     remove_habitat,
-    update_habitat
+    update_habitat,
+    main
     )
 
     habitat_choice = input("> ")
@@ -34,7 +35,7 @@ def habitat_sub_menu():
     elif habitat_choice == "4":
         update_habitat()
     elif habitat_choice == "5":
-        main_menu()
+        main()
     else:
         print("Invalid choice") 
 
@@ -54,7 +55,8 @@ def animal_sub_menu():
     add_animal,
     remove_animal,
     choose_animal_by_id,
-    update_animal
+    update_animal,
+    main
     )
 
     if animal_choice == "0":
@@ -70,7 +72,7 @@ def animal_sub_menu():
     elif animal_choice == "5":
         update_animal()
     elif animal_choice == "6":
-        main_menu()
+        main()
     else:
         print("Invalid choice")
 
@@ -91,7 +93,8 @@ def print_full_menu():
     remove_habitat,
     add_animal,
     remove_animal,
-    choose_animal_by_id
+    choose_animal_by_id,
+    main
     )
     
     choice = input("> ")
@@ -110,7 +113,7 @@ def print_full_menu():
     elif choice == "6":
         remove_habitat()
     elif choice == "7":
-        main_menu()
+        main()
     else:
         print("Invalid choice")
 
