@@ -8,8 +8,7 @@ class Habitat:
     def __init__(self, name, id=None):
         self.name = name
         self.id = id
-        #Habitat.all.append(self)
-
+        
     @property
     def name(self):
         return self._name 

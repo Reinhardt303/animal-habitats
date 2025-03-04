@@ -49,7 +49,7 @@ class Animal:
     
     @habitat_id.setter
     def habitat_id(self, habitat_id):
-        if type(habitat_id) is int and Habitat.find_by_id(habitat_id): # consider removing if statement
+        if type(habitat_id) is int and Habitat.find_by_id(habitat_id): 
             self._habitat_id = habitat_id
         else:
             raise Exception('Habitat ID must referance a habitat in the database')
