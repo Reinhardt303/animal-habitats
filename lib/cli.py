@@ -64,7 +64,7 @@ def habitat_sub_menu_select():
     elif habitat_choice == "3":
         remove_habitat()
     elif habitat_choice == "4":
-        main_menu()
+        main()
     else:
         print("Invalid choice") 
 def show_listed_animals():
