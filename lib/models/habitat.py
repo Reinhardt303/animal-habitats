@@ -48,7 +48,7 @@ class Habitat:
         CONN.commit()
 
         self.id = CURSOR.lastrowid
-        type(self).all[self.id] = self
+        Habitat.all[self.id] = self
 
     
 
@@ -76,7 +76,7 @@ class Habitat:
         CURSOR.execute(sql, (self.id,))
         CONN.commit()
 
-        del type(self).all[self.id]
+        del Habitat.all[self.id]
         self.id = None
         
     @classmethod

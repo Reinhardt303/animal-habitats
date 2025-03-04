@@ -110,7 +110,7 @@ def update_habitat():
             name = input("Enter the habitat's new name: ")
             habitat.name = name
             habitat.update()
-            print(f'Success: {habitat}')
+            print(f'Success: {habitat.name} has been updated')
         except Exception as exc:
             print("Error updating habitat: ", exc)
     else:
@@ -130,7 +130,7 @@ def update_animal():
             habitat_id = input("Enter the animal's new habitat_id: ")
             animal.habitat_id = int(habitat_id)
             animal.update()
-            print(f'Success: {animal}')
+            print(f'Success: {animal.name} has been updated')
         except Exception as exc:
             print("Error updating animal: ", exc)
     else:
